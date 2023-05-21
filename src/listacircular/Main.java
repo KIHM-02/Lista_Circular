@@ -14,12 +14,14 @@ public class Main
         lista.begin(3);
         lista.begin(4);
         
-        lista.showBegin();
+        lista.showData();
+        
+        System.out.println("--");
+        
         lista.deleteBegin();
         
-        System.out.println("----");
+        lista.showData();
         
-        lista.showBegin();
     }
 }
 
