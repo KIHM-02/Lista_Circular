@@ -83,6 +83,8 @@ public class Lista
                 inicio = inicio.getSiguiente();
                 ultimo.setSiguiente(inicio);
             }
+            
+            System.out.println("Se ha eliminado el dato");
         }
     }
     
@@ -170,6 +172,87 @@ public class Lista
                 nuevo.setSiguiente(inicio);
                 ultimo = nuevo;
             }
+            
+            System.out.println("Se ha eliminado el dato");
+        }
+    }
+    
+    // Seccion agregar en medio
+    
+    public void middle(int dato)                                                //Middle solo funciona si n > 3
+    {
+        Nodo walker, nuevo;
+        int counter;
+        
+        counter = objects_in_list();
+        
+        if(counter < 3)
+        {
+            System.out.println("Primero agrega "+(3-counter)+" datos a la lista");
+        }
+        else
+        {
+            walker = inicio;
+            counter = counter/2;
+            
+            for(int move_foward = 1; move_foward < counter; move_foward++)
+                walker = walker.getSiguiente();
+            
+            nuevo = new Nodo(dato, walker.getSiguiente());
+            walker.setSiguiente(nuevo);
+            
+            System.out.println("Se agrego el dato "+dato+" en medio");
+        }
+    }
+    
+    public int objects_in_list()                                                //Este metodo cuenta cuantos objetos hay en la lista
+    {
+        Nodo walker = inicio; 
+        int contador = 0;
+        
+        if(inicioIsEmpty())
+        {
+            return contador;
+        }
+        else
+        {
+            contador = 1;
+
+            while(walker != ultimo)
+            {
+                contador++;
+                walker = walker.getSiguiente();
+            }
+            
+            return contador;
+        }
+    }
+    
+    public void deleteMiddle()
+    {
+        Nodo walker, temporal;
+        int counter;
+        
+        counter = objects_in_list();
+        
+        if(counter < 3)
+        {
+            System.out.println("No puedo borrar menos de 3 datos");
+        }
+        else
+        {
+            walker = inicio;
+            counter = counter/2;
+            
+            for(int move_foward = 1; move_foward < counter; move_foward++)
+                walker = walker.getSiguiente();
+            
+            temporal = walker.getSiguiente();
+            
+            walker.setSiguiente(temporal.getSiguiente());
+            temporal.setSiguiente(null);
+            
+            System.out.println("Se ha eliminado el dato");
         }
     }
     

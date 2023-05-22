@@ -26,6 +26,7 @@ public class Main
         System.out.println("--");
         */
         
+        /*
         lista.last(1);
         lista.last(2);
         lista.last(3);
@@ -50,7 +51,30 @@ public class Main
         
         lista.showData();
         
+        */
         
+        
+        lista.last(1);
+        lista.last(2);
+        lista.last(3);
+        lista.last(4);
+        
+        lista.showData();
+        
+        System.out.println("--");
+        
+        lista.middle(0);
+        
+        System.out.println("--");
+        
+        lista.showData();
+        lista.deleteMiddle();
+        lista.begin(-1);                                                        //Aqui compruebo que siga funcionando los demás
+        lista.last(10);
+        
+        System.out.println("--");
+        
+        lista.showData();
     }
 }
 
