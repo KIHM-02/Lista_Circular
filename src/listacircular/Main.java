@@ -1,4 +1,5 @@
 package listacircular;
+import java.util.Scanner;
 /**
  * @author Kevin Huerta 22310411
  */
@@ -7,74 +8,72 @@ public class Main
 {
     public static void main(String[] args) 
     {
+        Scanner scan = new Scanner(System.in);
         Lista lista = new Lista();
         
-        /*
-        lista.begin(1);
-        lista.begin(2);
-        lista.begin(3);
-        lista.begin(4);
+        int opcion = 0, dato;
         
-        lista.showData();
-        
-        System.out.println("--");
-        
-        //lista.deleteBegin();
-        
-        lista.showData();
-        
-        System.out.println("--");
-        */
-        
-        /*
-        lista.last(1);
-        lista.last(2);
-        lista.last(3);
-        lista.last(4);
-        
-        lista.showData();
-        
-        System.out.println("--");
-        
-        lista.begin(0);
-        lista.last(5);
-        
-        System.out.println("--");
-        
-        lista.showData();
-        
-        System.out.println("---");
-        
-        lista.deleteLast();
-        lista.last(6);                                                          //comprobamos que la lista sigue funcionando
-        lista.begin(-1); 
-        
-        lista.showData();
-        
-        */
-        
-        
-        lista.last(1);
-        lista.last(2);
-        lista.last(3);
-        lista.last(4);
-        
-        lista.showData();
-        
-        System.out.println("--");
-        
-        lista.middle(0);
-        
-        System.out.println("--");
-        
-        lista.showData();
-        lista.deleteMiddle();
-        lista.begin(-1);                                                        //Aqui compruebo que siga funcionando los demás
-        lista.last(10);
-        
-        System.out.println("--");
-        
-        lista.showData();
+        while(opcion != 8)
+        {
+            System.out.println("==== Menu ====");
+            System.out.println("1) Agregar datos al inicio: ");
+            System.out.println("2) Agregar datos al final: ");
+            System.out.println("3) Agregar datos en medio: ");
+            System.out.println("4) Eliminar datos al inicio: ");
+            System.out.println("5) Eliminar datos al final: ");
+            System.out.println("6) Eliminar datos en medio: ");
+            System.out.println("7) Mostrar datos ");
+            System.out.println("8) Salir ");
+            
+            opcion = scan.nextInt();
+            
+            switch (opcion) 
+            {
+                case 1:
+                    System.out.println("Ingrese el dato a agregar: ");
+                        dato = scan.nextInt();
+                    
+                        lista.begin(dato);
+                    break;
+                    
+                case 2:
+                    System.out.println("Ingrese el dato a agregar: ");
+                        dato = scan.nextInt();
+                        
+                        lista.last(dato);
+                    break;
+                    
+                case 3:
+                    System.out.println("Ingrese el dato a agregar: ");
+                        dato = scan.nextInt();
+                        
+                        lista.middle(dato);
+                    break;
+                    
+                case 4:                       
+                    lista.deleteBegin();
+                    break;
+                    
+                case 5:
+                    lista.deleteLast();
+                    break;
+                    
+                case 6:
+                    lista.deleteMiddle();
+                    break;
+                
+                case 7:
+                    lista.showData();
+                    break;
+                    
+                case 8:
+                    System.out.println("Adios ...");
+                    break;    
+                
+                default:
+                    System.out.println("...No es una opcion valida...\n\n\n");
+            }   
+        }
     }
 }
 
