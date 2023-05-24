@@ -256,4 +256,40 @@ public class Lista
         }
     }
     
+    // Buscar datos especificos
+    
+    public void findData(int dato)
+    {
+        Nodo temporal;
+        int posicion = 1;
+        
+        if(inicioIsEmpty())
+        {
+            System.out.println("La lista esta vacia");
+        }
+        else
+        {
+            temporal = inicio;
+            
+            while(temporal.getDato() != dato)
+            {
+                posicion++;
+                temporal = temporal.getSiguiente();
+                
+                if(temporal == null)
+                    break;
+            }
+            
+            if(posicion == 0)
+            {
+                System.out.println("El dato no se encuentra en la lista");
+            }
+            else
+            {
+                System.out.println("La posicion del dato "+dato+" es "+posicion);
+            }
+        }
+        
+    }
+    
 }

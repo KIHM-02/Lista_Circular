@@ -13,7 +13,7 @@ public class Main
         
         int opcion = 0, dato;
         
-        while(opcion != 8)
+        while(opcion != 9)
         {
             System.out.println("==== Menu ====");
             System.out.println("1) Agregar datos al inicio: ");
@@ -23,7 +23,8 @@ public class Main
             System.out.println("5) Eliminar datos al final: ");
             System.out.println("6) Eliminar datos en medio: ");
             System.out.println("7) Mostrar datos ");
-            System.out.println("8) Salir ");
+            System.out.println("8) Mostrar posicion de un dato ");
+            System.out.println("9) Salir ");
             
             opcion = scan.nextInt();
             
@@ -67,6 +68,13 @@ public class Main
                     break;
                     
                 case 8:
+                    System.out.println("Ingrese el dato a buscar: ");
+                        dato = scan.nextInt();
+                    
+                        lista.findData(dato);
+                    break;    
+                
+                case 9:
                     System.out.println("Adios ...");
                     break;    
                 
